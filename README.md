@@ -17,3 +17,16 @@ return value (i.e. returns either ‘context object’ or ‘lambda result’)
 | with | this| Lambda result |
 | apply | this| Context object |
 | also | it| Context object |
+
+# 1 .let function
+The let function has numerous applications, but it is generally used to prevent a NullPointerException from occurring. The let function returns the lambda result and the context object is the it identifier. Let’s consider the following example:
+
+fun main (){ 
+
+val name: String? = null
+
+println(name!!.reversed)
+
+println(name.length)
+
+}
