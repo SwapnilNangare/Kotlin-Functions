@@ -5,8 +5,37 @@ fun main() {
     scope.age = 25
     scope.name = "Swapnil"
 
+    //1. let
+    var name: String? = null
+    var name_1: String? = "hello"
 
-     //1 .apply -> it
+//    name_1?.let {
+//        println(it.reversed())
+//        println(it.length)
+//    }
+
+//    val person = Person()
+//    println(person.firstName)
+//    println(person.age)
+
+    //2 .run
+    val person: Person? = Person()
+    val bio = person?.run {
+        println(firstName)
+        println(age)
+        "LogRocket rocks!!!"
+    }
+    println(bio)
+    // 3.apply
+
+
+
+
+
+    // 2. with function
+
+
+    //1 .apply -> it
 
 //    var emp = scope.apply {
 //        name = "Swapnil"
@@ -25,12 +54,12 @@ fun main() {
 //    println(x)
 
     // 3.with  this -> directly access the property, scope return value is last statement value
-    var a = with(scope) {
-        age = 22
-        name = "Akash"
+//    var a = with(scope) {
+//        age = 22
+//        name = "Akash"
 
-    }
-    println(a)
+}
+//    println(a)
 //
 //    // 4 run -> scope return value is last statement value
 //   var m = scope.run {
@@ -38,9 +67,6 @@ fun main() {
 //        name = "PQR"
 //    }
 //    println(m)
-
-
-}
 
 
 data class ScopedFunctions(var name: String = "", var age: Int = 18) {
@@ -63,4 +89,9 @@ apply           | this      | Context object
 also            | it        | Context object    */
 
 
+}
+
+class Person{
+    var firstName: String = "Elena Wilson"
+    var age: Int = 28
 }
